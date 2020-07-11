@@ -1,0 +1,45 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$font-stack:    Helvetica, sans-serif;
+$primary-color: rgb(226, 226, 226);
+$background-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: $background-color;
+  text-align: center;
+}
+a {
+    color: white;
+}
+
+a:visited {
+    color: rgb(0, 0, 0);
+  }
+
+
+.info {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.select {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 40%;
+    div {
+        background-color: gray;
+        padding: 2em;
+        min-width: 15em;
+
+        h2{
+            display: block;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    }
+}

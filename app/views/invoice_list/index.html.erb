@@ -1,0 +1,6 @@
+<h1>Client Invoices</h1>
+<div>
+  <% @clients.each do |client| %>
+    <li><%= link_to "#{client.client}'s invoice", invoice_path(client) %></li>
+  <% end %>
+</div>

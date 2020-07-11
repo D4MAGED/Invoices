@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get 'invoices', to: 'invoice_list#index'
+  root to: "welcome#show"
+
+  resources :invoice, only: [:show]
+  resource :welcome, only: [:show]
 end
+

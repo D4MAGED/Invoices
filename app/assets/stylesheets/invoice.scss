@@ -1,0 +1,213 @@
+// Place all the styles related to the Invoice controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$font-stack:    Helvetica, sans-serif;
+$primary-color: rgb(226, 226, 226);
+$secondary-color: #5590A8;
+$background-color: #333;
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+    background-color: $background-color;
+    text-align: center;
+    font-weight: normal;
+
+  }
+  .info {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.invoice{
+    width: 80%;
+    background-color: white;
+    padding: 1vw;
+}
+
+.box-shadow { box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
+    0 1px 5px 0 rgba(0,0,0,0.12),
+    0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+// Temporary per client CSS impentation
+
+//*******************************//
+//              PPT              //
+//*******************************//
+#PPT-logo-name{
+    display: flex;
+    flex-direction: row;
+    width: 14vw;
+    height: 7vw;
+    padding-bottom: 0;
+    h2{
+        color: #5590A8;
+        font-size: 2vw;
+        text-align: left;
+        vertical-align: middle;
+        margin: 0;
+        height: 7vw;
+    }
+    img{
+        width: 7vw;
+        height: 7vw;
+    }
+}
+
+#PPT-invoice-text{
+    display: inline;
+    color: #5590A8;
+    font-size: 7vw;
+    margin: 0 0 0 0;
+    text-align: right;
+    padding-right: 2vw;
+    padding-bottom: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+
+}
+
+#PPT-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+
+#PPT-slogan{
+    color: #7F7F7F;
+    display: block;
+    text-align: left;
+    vertical-align: top;
+    font-size: 1.2vw;
+    justify-content: left;
+    padding: 0;
+    margin: 0;
+    
+}
+
+#PPT-client-name{
+    color: #231F20;
+    display: block;
+    text-align: left;
+    vertical-align: top;
+    font-size: 2vw;
+    justify-content: left;
+    padding-top: 3vw;
+    margin: 0;
+}
+
+#PPT-business-info{
+    color: black;
+    display: block;
+    text-align: left;
+    vertical-align: top;
+    font-size: 1.5vw;
+    justify-content: left;
+    padding-top: 0.4vw;
+    margin: 0;
+}
+
+#PPT-invoice-info{
+    color: black;
+    display: block;
+    text-align: left;
+    vertical-align: top;
+    font-size: 1.5vw;
+    justify-content: right;
+    padding-top: 0.4vw;
+    margin: 0;
+    padding-left: 30vw;
+}
+
+#PPT-customer-info-spacer{
+    height:3vw;
+}
+
+#PPT-checks-payable{
+    color: black;
+    display: block;
+    text-align: center;
+    font-size: 1.5vw;
+    padding-top: 0.4vw;
+    margin: 0;
+}
+
+#PPT-thanks{
+    color: $secondary-color;
+    display: block;
+    text-align: center;
+    font-size: 1.5vw;
+    padding-top: 0.4vw;
+    margin: 0;
+}
+#PPT-services{
+    padding-top:4vw;
+    th{
+        background-color: $secondary-color;
+        font-size: 2vw;
+        text-align: left;
+        color: black;
+        padding-top: 1vw;
+    }
+    tr{
+        color: black;
+        font-size: 2vw;
+        text-align: left;
+    }
+
+    table, th, td {
+        border: 3px solid white;
+        border-collapse: collapse;
+    }
+    table{
+        width: 100%;
+    }
+    tr:nth-child(even) {
+        background-color: #E6E6E6;
+      }
+    td:nth-child(4) {
+    background-color: #CFCFCF;
+    text-align:right;
+    }
+
+}
+
+#PPT-total{
+    th{
+        font-size: 2vw;
+        text-align: left;
+        color: black;
+        padding-top: 1vw;
+    }
+    tr{
+        color: black;
+        font-size: 2vw;
+        text-align: left;
+    }
+
+    table, th, td {
+        border: 3px solid white;
+        border-collapse: collapse;
+    }
+    table{
+        width: 60%; /* whichever width you want */
+    margin-left: 40%; 
+    }
+    th:nth-child(2) {
+        text-align:right;
+        padding-left:1vw;
+    }
+    th:nth-child(1) {
+        text-align:right;
+    }
+     table > tbody > tr:nth-child(3) > th:nth-child(2){
+         background-color: $secondary-color;
+     }
+     table > tbody > tr:nth-child(3) > th:nth-child(1){
+         color: $secondary-color;
+     }
+}

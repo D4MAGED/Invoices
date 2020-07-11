@@ -1,0 +1,7 @@
+<div class="info">
+<h1><%= @invoice.client %>'s Invoices</h1>
+<div class="invoice box-shadow">
+    <% template = Liquid::Template.parse(@invoice.template) %>
+    <%= template.render("client" => get_client(@invoice), "invoice_info" => get_invoice(), "items" => get_items()).html_safe %>
+</div>
+</div>
