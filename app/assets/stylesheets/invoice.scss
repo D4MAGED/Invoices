@@ -22,7 +22,7 @@ body {
 .invoice{
     width: 80%;
     background-color: white;
-    padding: 1vw;
+    padding: 6%;
 }
 
 .box-shadow { box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
@@ -48,6 +48,8 @@ body {
         vertical-align: middle;
         margin: 0;
         height: 7vw;
+        font-weight: normal;
+
     }
     img{
         width: 7vw;
@@ -67,7 +69,6 @@ body {
     margin-block-end: 0;
     margin-inline-start: 0;
     margin-inline-end: 0;
-
 }
 
 #PPT-top{
@@ -81,22 +82,20 @@ body {
     color: #7F7F7F;
     display: block;
     text-align: left;
-    vertical-align: top;
     font-size: 1.2vw;
     justify-content: left;
     padding: 0;
     margin: 0;
-    
+    padding-bottom: 3vw;
 }
 
 #PPT-client-name{
     color: #231F20;
     display: block;
     text-align: left;
-    vertical-align: top;
     font-size: 2vw;
     justify-content: left;
-    padding-top: 3vw;
+    // padding-top: 3vw;
     margin: 0;
 }
 
@@ -104,23 +103,24 @@ body {
     color: black;
     display: block;
     text-align: left;
-    vertical-align: top;
     font-size: 1.5vw;
-    justify-content: left;
+    justify-content: right;
     padding-top: 0.4vw;
     margin: 0;
+    font-weight: normal;
+
 }
 
 #PPT-invoice-info{
     color: black;
     display: block;
     text-align: left;
-    vertical-align: top;
     font-size: 1.5vw;
     justify-content: right;
     padding-top: 0.4vw;
     margin: 0;
     padding-left: 30vw;
+    font-weight: normal;
 }
 
 #PPT-customer-info-spacer{
@@ -132,7 +132,7 @@ body {
     display: block;
     text-align: center;
     font-size: 1.5vw;
-    padding-top: 0.4vw;
+    padding-top: 4vw;
     margin: 0;
 }
 
@@ -149,7 +149,7 @@ body {
     th{
         background-color: $secondary-color;
         font-size: 2vw;
-        text-align: left;
+        text-align: center;
         color: black;
         padding-top: 1vw;
     }
@@ -160,7 +160,7 @@ body {
     }
 
     table, th, td {
-        border: 3px solid white;
+        border: 3px solid black;
         border-collapse: collapse;
     }
     table{
@@ -169,11 +169,22 @@ body {
     tr:nth-child(even) {
         background-color: #E6E6E6;
       }
-    td:nth-child(4) {
+
+    // Line Total
+    td:nth-child(5) {
     background-color: #CFCFCF;
     text-align:right;
     }
 
+    // Unit Price
+     table > tbody > tr > td:nth-child(4){
+        text-align:right;
+     }
+
+     // Quantity Price
+     table > tbody > tr > td:nth-child(2){
+        text-align:right;
+     }
 }
 
 #PPT-total{
@@ -210,4 +221,6 @@ body {
      table > tbody > tr:nth-child(3) > th:nth-child(1){
          color: $secondary-color;
      }
+
+     
 }

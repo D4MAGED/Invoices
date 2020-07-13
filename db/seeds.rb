@@ -20,28 +20,51 @@ Client.create(id: 1, client:"PPT", logo:"data:image/png;base64,iVBORw0KGgoAAAANS
         </div>
         <h3 id="{{client.name}}-slogan">People Processing Technology</h3>
         <div>
-        <h3 id="{{client.name}}-client-name">PPT Program Management</h3>
         <table>
             <tr>
-                <td><h3 id="{{client.name}}-business-info">{{client.address}}</h3></td>
-                <td><h3 id="{{client.name}}-invoice-info"><b>Invoice No:</b> {{invoice_info.invoice_no}}</h3></td>
+            <td><h3 id="{{client.name}}-business-info"><b>REMIT TO:</b></h3></td>
+                <td><h3 id="{{client.name}}-invoice-info"><b>INVOICE NO:</b> {{invoice_info.invoice_no}}</h3></td>
             </tr>
             <tr>
-            <td><h3 id="{{client.name}}-business-info">{{client.location}}</h3></td>
-            <td><h3 id="{{client.name}}-invoice-info">Date: {{invoice_info.date}}</h3></td>
-            </tr>
-            <tr>                
-                <td><h3 id="{{client.name}}-business-info">{{client.phone}}</h3></td>
-                <td><h3 id="{{client.name}}-invoice-info">Customer ID: {{invoice_info.cus_id}}</h3></td>
+            <td><h3 id="{{client.name}}-client-name">PPT Program Management</h3></td>
+            <td><h3 id="{{client.name}}-invoice-info"><b>DATE: </b>{{invoice_info.date}}</h3></td>
             </tr>
             <tr>
-            <td><h3 id="{{client.name}}-business-info">{{client.email}}</h3></td>
+                 <td><h3 id="{{client.name}}-business-info">{{client.address}}</h3></td>            
+                <td><h3 id="{{client.name}}-invoice-info"><b>CUSTOMER ID:</b> {{invoice_info.cus_id}}</h3></td>
+            </tr>
+            <tr>
+            <td><h3 id="{{client.name}}-business-info">{{client.location}}</h3></td>       
+            <td><h3 id="{{client.name}}-invoice-info"><b>BILL TO:</b></h3></tr>
+            </tr>
+            <tr>
+            <td><h3 id="{{client.name}}-business-info">{{client.phone}}</h3></td>
+            <td><h3 id="{{client.name}}-invoice-info">{{invoice_info.co_name}}</h3></tr>
+            </tr>
+            <tr>
+            <td>        <h3 id="{{client.name}}-business-info"><b>SHIP TO:</b></h3>            </td>
+            <td><h3 id="{{client.name}}-invoice-info"><b>ATTN:</b> {{invoice_info.name}}</h3></td>
+            </tr>
+            <tr>
+            <td><h3 id="{{client.name}}-business-info">{{invoice_info.co_name}}</h3></td>
+            <td><h3 id="{{client.name}}-invoice-info">{{invoice_info.address}}</h3></td>
+            </tr>
+            <tr>
+            <td><h3 id="{{client.name}}-business-info">{{invoice_info.name}}</h3></td>
+            <td><h3 id="{{client.name}}-invoice-info">{{invoice_info.location}}</h3></td>
+            </tr>
+            <tr>
+            <td><h3 id="{{client.name}}-business-info">{{invoice_info.address}}</h3></td>
+            <td><h3 id="{{client.name}}-invoice-info">{{invoice_info.phone}}</h3></td>
+            </tr>
+            <tr>
+            <td><h3 id="{{client.name}}-business-info">{{invoice_info.location}}</h3>
+                <h3 id="{{client.name}}-business-info">{{invoice_info.phone}}</h3></td>
             </tr>
         </table>
-        <div id="{{client.name}}-customer-info-spacer"></div>
-        <h3 id="{{client.name}}-business-info">{{invoice_info.name}}</h3>
-        <h3 id="{{client.name}}-business-info">{{invoice_info.co_name}}</h3>
-        <h3 id="{{client.name}}-business-info">{{invoice_info.address}}</h3>
+        
+        
+        
         <h3 id="{{client.name}}-business-info">{{invoice_info.location}}</h3>
         <h3 id="{{client.name}}-business-info">{{invoice_info.phone}}</h3>
         </div>
@@ -49,7 +72,8 @@ Client.create(id: 1, client:"PPT", logo:"data:image/png;base64,iVBORw0KGgoAAAANS
         {% assign subtotal = 0.0 %}
         <table>
             <tr>
-                <th>Quantity</th>
+                <th>Line Item</th>
+                <th>Qty</th>
                 <th>Description</th>
                 <th>Unit Price</th>
                 <th>Line Total</th>
@@ -57,10 +81,11 @@ Client.create(id: 1, client:"PPT", logo:"data:image/png;base64,iVBORw0KGgoAAAANS
             {% for item in items.quantity%}
             {% assign price = items.price[forloop.index0] | times: items.quantity[forloop.index0] %}
             <tr>
+                <td>{{forloop.index}}</td>
                 <td>{{items.quantity[forloop.index0]}}</td>
                 <td>{{items.description[forloop.index0]}}</td>
-                <td>{{items.price[forloop.index0]}}</td>
-                <td>{{price}}
+                <td>{{items.price[forloop.index0] | currency}}</td>
+                <td>{{price | currency}}
             </tr>
             {% assign subtotal = subtotal | plus: price %}
             {% endfor %}
@@ -71,15 +96,15 @@ Client.create(id: 1, client:"PPT", logo:"data:image/png;base64,iVBORw0KGgoAAAANS
         <table>
             <tr>
                 <th>Subtotal</th>
-                <th>{{subtotal}}</th>
+                <th>{{subtotal | currency}}</th>
             </tr>
             <tr>
                 <th>Sales Tax @ 9.50%</th>
-                <th>{{tax}}</th>
+                <th>{{tax | currency}}</th>
             </tr>
             <tr>
                 <th>TOTAL</th>
-                <th>{{ subtotal | plus: tax }}</th>
+                <th>{{ subtotal | plus: tax | currency}}</th>
             </tr>
         </table>
         </div>
